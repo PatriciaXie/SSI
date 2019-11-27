@@ -5,16 +5,16 @@ v = VideoReader(videoPath);
 v.CurrentTime = t0;
 T = 1;
 
-% 检测
+% Detect
 while hasFrame(v)
     frame = readFrame(v);
     frame = double( rgb2gray( frame(roi(2):roi(2)+roi(4)-1, roi(1):roi(1)+roi(3)-1, :)) )/255;
     fprintf('Process image %d - %d\n ', v.CurrentTime, v.Duration);
     
-    % 归一化图像
+    % normalize image
     img = preProcess(frame, mask, theta1); 
 
-    % 检测果蝇几何中心点及朝向
+    % detect flies' position and orientation
     [flyCenters, flyOrientations, flyProbabilities] = detectFly(img, gaussKernels, kernelSize, theta2);
     position{t, 1} = flyCenters;
     position{t, 2} = flyOrientations;

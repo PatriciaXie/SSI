@@ -9,7 +9,7 @@ for t = 1:1:T
     p = position{t,1};
     n = size(p, 1);
     dMatrix = zeros(n*(n-1), 1);
-    % º∆À„œ‡ª•º‰æ‡¿Î
+    % caculate mutual distance
     k = 1;
     for i = 1:1:n
         p1 = p(i, :);
