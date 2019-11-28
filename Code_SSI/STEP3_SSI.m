@@ -35,8 +35,8 @@ for x = 1:1:2*filterR-1
     f(x) = c*exp(-dx);
 end
 tmpSSI = [fliplr(SSI(1:filterR)), SSI, fliplr(SSI(end-filterR:end))];
-SSI2 = conv(tmpSSI, f, 'same');
-SSI2 = SSI2(filterR+1:end-filterR-1);
+SSI_f = conv(tmpSSI, f, 'same');
+SSI_f = SSI_f(filterR+1:end-filterR-1);
 
 
 save(ssiPath, 'SSI', 'SSI_f');

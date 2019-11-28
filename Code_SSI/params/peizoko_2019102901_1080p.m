@@ -16,7 +16,8 @@ nAngle = 12;        % count of orientations
 kernelSize = 5;     % gauss kernal size to smooth the original images
 theta1 = 0.7;      % normalized threshold
 theta2 = 0.5;      % minimum gray intensity of target (after normalization)
-
+theta3 = 0.5;       % simplized flies' location threhold
+simplized = 1;
 %% SSI Parameters
 n_real = 41;        % count of flies
 bin = 17.3;         % 0.5 cm means 'bin' pixel on image
