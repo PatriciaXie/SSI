@@ -7,7 +7,7 @@ v.CurrentTime = t0;
 T = 1;
 lenT = (v.Duration - v.CurrentTime + 1) * v.FrameRate;
 % Detect
-tic;
+tic; te = 1;
 while hasFrame(v)
     frame = readFrame(v);
     frame = double( rgb2gray( frame(roi(2):roi(2)+roi(4)-1, roi(1):roi(1)+roi(3)-1, :)) )/255;

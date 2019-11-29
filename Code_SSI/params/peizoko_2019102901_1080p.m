@@ -8,7 +8,9 @@ gy = [150;966;966];  % triangle y-coordinate
 videoPath = ['../Data_SSI/', videoName];
 positionPath = ['result/', videoName(1:end-4), '/position.mat'];
 ssiPath = ['result/', videoName(1:end-4), '/ssi.mat'];
-mkdir(['result/' , videoName(1:end-4)]);
+if ~exist( ['result/' , videoName(1:end-4)], 'file')
+    mkdir(['result/' , videoName(1:end-4)]);
+end
 %% Detection Parameters
 kernelW = 4;        % width of flies (pixel)
 kernelH = 13;       % height of flies (pixel)
